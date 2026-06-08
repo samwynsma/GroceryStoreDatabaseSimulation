@@ -11,15 +11,21 @@ public class MainMenu extends JComponent implements ActionListener {
         mainFrame = new JFrame("Main Menu");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setSize(600, 600);
-        mainFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
+        mainFrame.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
 
+        JButton addItem = new JButton("Add item to database");
         JButton popupButton = new JButton("Popup");
         JTextField textField = new JTextField(20);
         popupButton.addActionListener(e -> AddOptions(textField.getText()));
-        mainFrame.add(popupButton, BorderLayout.CENTER);
+        addItem.addActionListener(e -> AddItemToDatabase(textField.getText()));
+        mainFrame.add(addItem, BorderLayout.CENTER);
         mainFrame.add(textField);
+        mainFrame.add(popupButton);
 
         mainFrame.setVisible(true);
+    }
+    private int AddItemToDatabase(String text) {
+        return JOptionPane.showConfirmDialog(mainFrame, "Object has been added to database");
     }
     public static void main(String[] args)
     {
