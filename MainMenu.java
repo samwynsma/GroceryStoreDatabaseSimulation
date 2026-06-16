@@ -25,7 +25,26 @@ public class MainMenu extends JComponent implements ActionListener {
         mainFrame.setVisible(true);
     }
     private int AddItemToDatabase(String text) {
-        return JOptionPane.showConfirmDialog(mainFrame, "Object has been added to database");
+        int itemsInDatabase = 0;
+        boolean itemIsAdded = false;
+        while (!itemIsAdded) { 
+            try
+            {
+                String input = JOptionPane.showInputDialog("How many " + text + "(s) do you want to add to the database?");
+                itemsInDatabase = Integer.parseInt(input.trim());
+                itemIsAdded = true;
+            }
+            catch(NumberFormatException e)
+            {
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Invalid input. Please enter a valid integer.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
+            }
+        }
+        return itemsInDatabase;
     }
     public static void main(String[] args)
     {
