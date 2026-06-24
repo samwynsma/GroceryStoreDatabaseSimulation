@@ -1,2 +1,2 @@
 # GroceryStoreDatabaseSimulation
-Goal is to create a grocery store simulator using graphics to display information and a database, and then to apply those graphical improvements to other projects
+DEPRECATED: This project is currently not in use, as most application purposes are being dealt with in the C# Database Application. Will keep in case I change my mind in the future, but this project is not currently relevant.
